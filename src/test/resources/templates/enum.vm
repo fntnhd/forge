@@ -1,0 +1,5 @@
+<enumeration name="${type.name}">
+#foreach($l in ${type.literals})
+    <literal name="${l.name}"/>
+#end
+</enumeration>

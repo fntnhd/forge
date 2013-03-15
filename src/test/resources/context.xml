@@ -1,0 +1,48 @@
+<context>
+    <properties>
+        <property name="generated.source.root" value="target/testoutput"/>
+        <property name="test.resource.root" value="src/test/resources"/>
+        <property name="namespace" value="org.codetitan.forge.test"/>
+    </properties>
+    <models>
+        <model file="${test.resource.root}/project.xml" adapter="org.atlas.model.adapter.xml.PimAdapter"/>
+    </models>
+    <primitives file="${test.resource.root}/primitives.xml"/>
+    <templates dir="${test.resource.root}/templates"/>
+    <utilities>
+        <utility name="exampleUtil" impl="org.codetitan.forge.util.ExampleUtility"/>
+    </utilities>
+	<conditions>
+		<condition name="notTransient"><![CDATA[!${eval.boolTag(type, 'transient')}]]></condition>
+		<condition name="isPersisted"><![CDATA[!${eval.boolTag(type, 'transient')} && !${eval.boolTag(type, 'composite')}]]></condition>
+	</conditions>
+    <targets>
+        <target name="entity"
+                stereotype="entity"
+                template="entity.vm"
+                outputFile="${name}.xml"
+                outputPath="${generated.source.root}/entity"
+                overwrite="true">
+            <property name="namespace" value="${namespace}.entity"/>
+        </target>
+
+        <target name="enum"
+                stereotype="enumeration"
+                template="enum.vm"
+                outputFile="${name}.xml"
+                outputPath="${generated.source.root}/enum"
+                overwrite="false"/>
+        <target name="control"
+                stereotype="control"
+                template="control.vm"
+                outputFile="${name}.xml"
+                outputPath="${generated.source.root}/control"
+                overwrite="true"/>
+        <target name="boundary"
+                stereotype="boundary"
+                template="boundary.vm"
+                outputFile="${name}.xml"
+                outputPath="${generated.source.root}/boundary"
+                overwrite="true"/>
+    </targets>
+</context>
