@@ -23,9 +23,6 @@ public class NamingUtilityTest {
     public static void tearDownClass() throws Exception {
     }
 
-    /**
-     * Test of addSpacerToCamelCase method, of class AtlasStringUtils.
-     */
     @Test
     public void testAddSpacerToCamelCase() {
         System.out.println("addSpacerToCamelCase");
@@ -42,9 +39,6 @@ public class NamingUtilityTest {
 
     }
 
-    /**
-     * Test of addSpacerToCamelCase method, of class AtlasStringUtils.
-     */
     @Test
     public void testAddSpacerToCamelCaseUpper() {
         System.out.println("addSpacerToCamelCaseUpper");

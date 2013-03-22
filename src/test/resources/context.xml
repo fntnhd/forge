@@ -5,7 +5,7 @@
         <property name="namespace" value="org.codetitan.forge.test"/>
     </properties>
     <models>
-        <model file="${test.resource.root}/project.xml" adapter="org.atlas.model.adapter.xml.PimAdapter"/>
+        <model file="${test.resource.root}/project.xml" adapter="org.codetitan.forge.adapter.PimAdapter"/>
     </models>
     <primitives file="${test.resource.root}/primitives.xml"/>
     <templates dir="${test.resource.root}/templates"/>
